@@ -28,6 +28,7 @@ class PSEELoader(object):
             self._binary_format = npy_format
         self._file = open(datfile, "rb")
         self._start, self.ev_type, self._ev_size, self._size = self._binary_format.parse_header(self._file)
+        self._ev_size = int(self._ev_size)
         assert self._ev_size != 0
         if self._extension == "dat":
             self._dtype = self._binary_format.EV_TYPE
@@ -46,7 +47,7 @@ class PSEELoader(object):
         # size
         self._file.seek(0, os.SEEK_END)
         self._end = self._file.tell()
-        self._ev_count = (self._end - self._start) // self._ev_size
+        self._ev_count = int((self._end - self._start) // self._ev_size)
         self.done = False
         self._file.seek(self._start)
         # If the current time is t, it means that next event that will be loaded has a
