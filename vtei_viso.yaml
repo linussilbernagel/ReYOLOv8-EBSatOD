@@ -1,0 +1,18 @@
+# YOLOv5 ? by Ultralytics, GPL-3.0 license
+# VISOTilesEBS
+
+
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path: /media/linus/Hjuvik/data/VISOTilesEBS/splits/vtei/VISO_vtei_512_512_10ms_bins_10/images # dataset root dir
+train: /media/linus/Hjuvik/data/VISOTilesEBS/splits/vtei/VISO_vtei_512_512_10ms_bins_10/images/train  # train images (relative to 'path') 128 images
+val: /media/linus/Hjuvik/data/VISOTilesEBS/splits/vtei/VISO_vtei_512_512_10ms_bins_10/images/val  # val images (relative to 'path') 128 images
+test: /media/linus/Hjuvik/data/VISOTilesEBS/splits/vtei/VISO_vtei_512_512_10ms_bins_10/images/test # test images (optional)
+
+# Classes
+nc: 4  # number of classes
+names: ['car','airplane', 'ship', 'train']  # class names
+
+
+# Download script/URL (optional)
+#download: https://ultralytics.com/assets/coco128.zip
+
